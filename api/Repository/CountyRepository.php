@@ -1,5 +1,6 @@
 <?php
-use App\Database\BaseRepository;
+namespace App\Repository;
+use App\Repository\BaseRepository;
 
 class CountyRepository extends BaseRepository{
     function __construct
@@ -8,7 +9,7 @@ class CountyRepository extends BaseRepository{
         $user = self::USER, 
         $password = self::PASSWORD, 
         $database = self::DATABASE){
-            parent::__construct(host: $host, user: $user, password: $password, database: $database);
+            parent::__construct($host, $user, $password, $database);
             $this->tableName = 'counties';
         }
 }
